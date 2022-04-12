@@ -1,3 +1,4 @@
+import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -7,7 +8,7 @@ import { ReactiveFormComponent } from './forms/reactive.component';
 import { TemplateFormComponent } from './forms/template.component';
 
 @NgModule({
-  imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [BrowserModule, CommonModule, FormsModule, ReactiveFormsModule],
   declarations: [
     FormComponent,
     TemplateFormComponent,

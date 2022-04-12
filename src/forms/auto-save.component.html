@@ -1,29 +1,43 @@
-<form>
+<form #emailForm="ngForm" (submit)="onSubmit(emailForm)">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input
+      name="login"
+      ngModel
       type="email"
       class="form-control"
       id="exampleInputEmail1"
       aria-describedby="emailHelp"
       placeholder="Enter email"
+      (blur)="onSubmit(emailForm)"
     />
-    <small id="emailHelp" class="form-text text-muted"
-      >We'll never share your email with anyone else.</small
-    >
   </div>
+</form>
+<form #passwordForm="ngForm" (submit)="onSubmit(passwordForm)">
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
     <input
+      name="password"
+      ngModel
       type="password"
       class="form-control"
       id="exampleInputPassword1"
       placeholder="Password"
+      (blur)="onSubmit(passwordForm)"
     />
   </div>
+</form>
+
+<form #rememberMeForm="ngForm" (submit)="onSubmit(rememberMeForm)">
   <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+    <input
+      name="rememberMe"
+      ngModel
+      type="checkbox"
+      class="form-check-input"
+      id="exampleCheck1"
+      (blur)="onSubmit(rememberMeForm)"
+    />
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
 </form>

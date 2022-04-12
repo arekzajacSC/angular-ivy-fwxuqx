@@ -20,8 +20,4 @@ export class TemplateFormComponent {
         .map((option) => option.value),
     });
   }
-
-  test(x) {
-    console.log(x);
-  }
 }

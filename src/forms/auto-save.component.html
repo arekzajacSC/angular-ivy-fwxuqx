@@ -1,30 +1,28 @@
 <form #emailForm="ngForm" (submit)="onSubmit(emailForm)">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
-    <input
+    <ex-input-text
       name="login"
       ngModel
       type="email"
-      class="form-control"
       id="exampleInputEmail1"
       aria-describedby="emailHelp"
       placeholder="Enter email"
-      (blur)="onSubmit(emailForm)"
-    />
+      (inputBlur)="onSubmit(emailForm)"
+    ></ex-input-text>
   </div>
 </form>
 <form #passwordForm="ngForm" (submit)="onSubmit(passwordForm)">
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input
+    <ex-input-text
       name="password"
       ngModel
       type="password"
-      class="form-control"
       id="exampleInputPassword1"
       placeholder="Password"
-      (blur)="onSubmit(passwordForm)"
-    />
+      (inputBlur)="onSubmit(passwordForm)"
+    ></ex-input-text>
   </div>
 </form>
 
@@ -36,7 +34,7 @@
       type="checkbox"
       class="form-check-input"
       id="exampleCheck1"
-      (blur)="onSubmit(rememberMeForm)"
+      (inputBlur)="onSubmit(rememberMeForm)"
     />
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
   </div>

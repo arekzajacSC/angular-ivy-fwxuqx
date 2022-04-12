@@ -28,44 +28,24 @@ export class InputTextComponent implements ControlValueAccessor {
 
   @Output() inputFocus: EventEmitter<Event> = new EventEmitter<Event>();
   @Output() inputBlur: EventEmitter<Event> = new EventEmitter<Event>();
-  @Output() inputChanged: EventEmitter<string> = new EventEmitter<string>();
-  @Output() valueChanged: EventEmitter<string> = new EventEmitter<string>();
 
   @ViewChild('input')
   inputElement: ElementRef;
 
   onChange: (value: any) => void;
   onTouched: () => void;
-  private _value: string = null;
-  private _focused: boolean = false;
-
-  set value(value: string) {
-    this._value = value;
-    this.changeDetector.markForCheck();
-  }
-  get value(): string {
-    return this._value;
-  }
-
-  set focused(value: boolean) {
-    this._focused = value;
-  }
-  get focused(): boolean {
-    return this._focused;
-  }
 
   constructor(private changeDetector: ChangeDetectorRef) {}
 
   writeValue(value: string): void {
-    this.valueChanged.emit(value);
-    this._value = value;
+    if (this.inputElement) {
+      this.inputElement.nativeElement.value = value;
+    }
   }
 
   registerOnChange(fn: any): void {
     this.onChange = (value: string) => {
-      this._value = value;
-      this.inputChanged.emit(this.value);
-      return fn(this.value);
+      return fn(value);
     };
   }
 
@@ -83,12 +63,10 @@ export class InputTextComponent implements ControlValueAccessor {
   }
 
   onInputFocus(event: Event) {
-    this.focused = true;
     this.inputFocus.emit(event);
   }
 
   onInputBlur(event: Event) {
-    this.focused = false;
     this.inputBlur.emit(event);
     this.onTouched();
   }

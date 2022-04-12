@@ -8,6 +8,8 @@
       id="exampleInputEmail1"
       aria-describedby="emailHelp"
       placeholder="Enter email"
+      (focus)="test($event)"
+      (blur)="test($event)"
     ></ex-input-text>
   </div>
   <div class="form-group">

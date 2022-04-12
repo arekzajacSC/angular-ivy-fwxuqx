@@ -92,4 +92,8 @@ export class InputTextComponent implements ControlValueAccessor {
     this.inputBlur.emit(event);
     this.onTouched();
   }
+
+  handleInput({ target }) {
+    this.onChange(target.value);
+  }
 }

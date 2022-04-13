@@ -14,7 +14,7 @@ export class ReactiveFormComponent {
   ];
 
   form = this.fb.group({
-    login: [''],
+    login: ['', numberOfItems(3)],
     password: [''],
     rememberMe: [false],
     radioOption: [null],

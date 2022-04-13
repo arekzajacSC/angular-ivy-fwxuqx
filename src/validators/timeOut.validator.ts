@@ -23,6 +23,8 @@ export class TimeOutValidatorDirective implements AsyncValidator {
   limit: number;
 
   validate(control: AbstractControl): Observable<ValidationErrors | null> {
-    return timer(this.limit).pipe(map(() => ({ message: 'Timeout exceeded' })));
+    return timer(this.limit).pipe(
+      map(() => ({ timeOut: { message: 'Timeout exceeded' } }))
+    );
   }
 }

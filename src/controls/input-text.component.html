@@ -1,0 +1,9 @@
+<input
+  #input
+  class="form-control"
+  [type]="type"
+  [placeholder]="placeholder"
+  (focus)="onInputFocus($event)"
+  (blur)="onInputBlur($event)"
+  (input)="handleInput($event)"
+/>

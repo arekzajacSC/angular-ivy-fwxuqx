@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl } from '@angular/forms';
+import { numberOfItems } from '../validators/numberOfItems.validator';
 
 @Component({
   selector: 'example-reactive-form',
@@ -13,7 +14,7 @@ export class ReactiveFormComponent {
   ];
 
   form = this.fb.group({
-    login: [''],
+    login: ['', numberOfItems(3)],
     password: [''],
     rememberMe: [false],
     radioOption: [null],

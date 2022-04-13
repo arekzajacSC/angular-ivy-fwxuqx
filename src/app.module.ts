@@ -7,6 +7,7 @@ import { FormComponent } from './form.component';
 import { AutoSaveFormComponent } from './forms/auto-save.component';
 import { ReactiveFormComponent } from './forms/reactive.component';
 import { TemplateFormComponent } from './forms/template.component';
+import { TimeOutValidatorDirective } from './validators/timeOut.validator';
 
 @NgModule({
   imports: [BrowserModule, CommonModule, FormsModule, ReactiveFormsModule],
@@ -15,6 +16,7 @@ import { TemplateFormComponent } from './forms/template.component';
     TemplateFormComponent,
     ReactiveFormComponent,
     AutoSaveFormComponent,
+    TimeOutValidatorDirective,
     InputTextComponent,
   ],
   bootstrap: [FormComponent],

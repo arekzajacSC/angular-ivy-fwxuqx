@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormControl } from '@angular/forms';
+import { numberOfItems } from '../validators/numberOfItems.validator';
 
 @Component({
   selector: 'example-reactive-form',
